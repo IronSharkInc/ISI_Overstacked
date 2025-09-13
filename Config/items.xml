@@ -9,17 +9,30 @@
     <set xpath="//property[@name='Stacknumber' and @value &gt;  1000 and @value &lt;  10000]/@value"> 10000</set>
     <set xpath="//property[@name='Stacknumber' and @value &gt; 10000 and @value &lt; 100000]/@value">100000</set>
 
-    <!-- 1: Some items do not work with a Stacknumber greater than 1 -->
+    
+    <!-- Overrides! -->
+    <!-- Only One: Some items do not work with a Stacknumber greater than 1 -->
     <set xpath="//item[@name='vehicleMinibikePlaceable']/property[@name='Stacknumber']/@value">    1</set>
     <set xpath="//item[@name='bucketEmpty']             /property[@name='Stacknumber']/@value">    1</set>
     <set xpath="//item[@name='bucketRiverWater']        /property[@name='Stacknumber']/@value">    1</set>
 
-    <!-- update ammo/resource Stacknumber to 1k/10k -->
+    <!-- Ammo -->
     <set xpath="//item[starts-with(@name, 'ammo')]      /property[@name='Stacknumber']/@value"> 1000</set>
     <set xpath="//item[@name='ammoGasCan']              /property[@name='Stacknumber']/@value">10000</set>
-    <set xpath="//item[starts-with(@name, 'resource')]  /property[@name='Stacknumber']/@value">10000</set>
 
-    <!-- only let bundles stack 100 times -->
+    <!-- Resources: 1K -->
+    <set xpath="//item[@name='resourceSnowBall']        /property[@name='Stacknumber']/@value"> 1000</set>
+    <set xpath="//item[@name='resourceYuccaFibers']     /property[@name='Stacknumber']/@value"> 1000</set>
+    <set xpath="//item[@name='resourceBrokenGlass']     /property[@name='Stacknumber']/@value"> 1000</set>
+    <set xpath="//item[@name='resourceBone']            /property[@name='Stacknumber']/@value"> 1000</set>
+    <set xpath="//item[@name='resourceRocketCasing']    /property[@name='Stacknumber']/@value"> 1000</set>
+    
+    <!-- Resources: 10K -->
+    <set xpath="//item[@name='resourceCobblestones']    /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[@name='resourceCement']          /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[@name='resourceConcreteMix']     /property[@name='Stacknumber']/@value">10000</set>
+
+    <!-- Bundle Overrides: 100 -->
     <set xpath="//item[contains(@name, 'Bundle')]       /property[@name='Stacknumber']/@value">  100</set>
 
 
