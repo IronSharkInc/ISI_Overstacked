@@ -1,0 +1,141 @@
+<IronSharkInc>
+
+    <!-- Stacks of 1k to 10k -->
+    <set xpath="//recipe[
+        starts-with(@name, 'resource') 
+        and contains(@name, 'Bundle')
+        and not(@name='resourceLockPickBundle') 
+        and not(@name='resourceGunPowderBundle')
+    ]/ingredient/@count">10000</set>
+
+    <!-- Add recipes for new resource bundles -->
+    <append xpath="//recipes">
+
+        <recipe name="resourceClayLumpBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+            <ingredient name="resourceClayLump" count="10000"/>
+        </recipe>
+
+        <recipe name="resourceCrushedSandBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+            <ingredient name="resourceCrushedSand" count="10000"/>
+        </recipe>
+
+        <recipe name="resourceCobblestonesBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+            <ingredient name="resourceCobblestones" count="10000"/>
+        </recipe>
+
+        <recipe name="resourceCementBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+            <ingredient name="resourceCement" count="10000"/>
+        </recipe>
+
+        <recipe name="resourceConcreteMixBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+            <ingredient name="resourceConcreteMix" count="10000"/>
+        </recipe>
+
+    </append>
+
+    <!-- Add recipes for ammo stacks -->
+    <append xpath="//recipes">
+
+        <recipe name="ammoStack9mmBulletBall" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo9mmBulletBall" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack9mmBulletHP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo9mmBulletHP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack9mmBulletAP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo9mmBulletAP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack44MagnumBulletBall" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo44MagnumBulletBall" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack44MagnumBulletHP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo44MagnumBulletHP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack44MagnumBulletAP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo44MagnumBulletAP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack762mmBulletBall" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo762mmBulletBall" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack762mmBulletHP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo762mmBulletHP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStack762mmBulletAP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammo762mmBulletAP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackShotgunShell" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoShotgunShell" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackShotgunSlug" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoShotgunSlug" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackShotgunBreachingSlug" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoShotgunBreachingSlug" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackJunkTurretRegular" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoJunkTurretRegular" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackJunkTurretShell" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoJunkTurretShell" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackJunkTurretAP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoJunkTurretAP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackArrowStone" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoArrowStone" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackArrowIron" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoArrowIron" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackArrowSteelAP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoArrowSteelAP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackArrowFlaming" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoArrowFlaming" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackArrowExploding" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoArrowExploding" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackCrossbowBoltStone" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoCrossbowBoltStone" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackCrossbowBoltIron" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoCrossbowBoltIron" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackCrossbowBoltSteelAP" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoCrossbowBoltSteelAP" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackCrossbowBoltFlaming" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoCrossbowBoltFlaming" count="1000"/>
+        </recipe>
+
+        <recipe name="ammoStackCrossbowBoltExploding" count="1" craft_time="10" craft_area="workbench" tags="learnable,workbenchCrafting">
+            <ingredient name="ammoCrossbowBoltExploding" count="1000"/>
+        </recipe>
+
+    </append>
+
+</IronSharkInc>

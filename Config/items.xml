@@ -1,0 +1,357 @@
+<IronSharkInc>
+
+    <!-- Stacknumbers! -->
+
+    <!-- Round up: 0.1k, 1k, 10k, 100k -->
+    <!-- NOTE: leveled items don't stack -->
+    <set xpath="//property[@name='Stacknumber' and @value &gt;     0 and @value &lt;    100]/@value">   100</set>
+    <set xpath="//property[@name='Stacknumber' and @value &gt;   100 and @value &lt;   1000]/@value">  1000</set>
+    <set xpath="//property[@name='Stacknumber' and @value &gt;  1000 and @value &lt;  10000]/@value"> 10000</set>
+    <set xpath="//property[@name='Stacknumber' and @value &gt; 10000 and @value &lt; 100000]/@value">100000</set>
+
+    <!-- 1: Some items do not work with a Stacknumber greater than 1 -->
+    <set xpath="//item[@name='vehicleMinibikePlaceable']/property[@name='Stacknumber']/@value">    1</set>
+    <set xpath="//item[@name='bucketEmpty']             /property[@name='Stacknumber']/@value">    1</set>
+    <set xpath="//item[@name='bucketRiverWater']        /property[@name='Stacknumber']/@value">    1</set>
+
+    <!-- update ammo/resource Stacknumber to 1k/10k -->
+    <set xpath="//item[starts-with(@name, 'ammo')]      /property[@name='Stacknumber']/@value"> 1000</set>
+    <set xpath="//item[@name='ammoGasCan']              /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[starts-with(@name, 'resource')]  /property[@name='Stacknumber']/@value">10000</set>
+
+    <!-- only let bundles stack 100 times -->
+    <set xpath="//item[contains(@name, 'Bundle')]       /property[@name='Stacknumber']/@value">  100</set>
+
+
+    <!-- Bundles! -->
+    
+    <!-- resource.*Bundles up to 10k -->
+    <set xpath="//item[
+        starts-with(@name, 'resource') 
+        and contains(@name, 'Bundle') 
+        and not(@name='resourceLockPickBundle') 
+        and not(@name='resourceGunPowderBundle')
+    ]//property[@name='Create_item_count']/@value">10000</set>
+
+    <!-- Add missing resource bundles -->
+    <append xpath="//items">
+
+        <item name="resourceClayLumpBundle">
+            <property name="Extends" value="resourceRockSmallBundle"/>
+            <property name="CustomIcon" value="resourceClayLump"/>
+            <property name="SoundPickup" value="clay_grab"/>
+            <property name="SoundPlace" value="clay_place"/>
+            <property class="Action0">
+                <property name="Create_item" value="resourceClayLump"/>
+                <property name="Create_item_count" value="10000"/>
+            </property>
+        </item>
+        
+        <item name="resourceCrushedSandBundle">
+            <property name="Extends" value="resourceRockSmallBundle"/>
+            <property name="CustomIcon" value="resourceCrushedSand"/>
+            <property name="SoundPickup" value="sand_grab"/>
+            <property name="SoundPlace" value="sand_place"/>
+            <property class="Action0">
+                <property name="Create_item" value="resourceCrushedSand"/>
+                <property name="Create_item_count" value="10000"/>
+            </property>
+        </item>
+        
+        <item name="resourceCobblestonesBundle">
+            <property name="Extends" value="resourceRockSmallBundle"/>
+            <property name="CustomIcon" value="resourceCobblestones"/>
+            <property name="SoundPickup" value="cobblestones_grab"/>
+            <property name="SoundPlace" value="cobblestones_place"/>
+            <property class="Action0">
+                <property name="Create_item" value="resourceCobblestones"/>
+                <property name="Create_item_count" value="10000"/>
+            </property>
+        </item>
+        
+        <item name="resourceCementBundle">
+            <property name="Extends" value="resourceRockSmallBundle"/>
+            <property name="CustomIcon" value="resourceCement"/>
+            <property name="SoundPickup" value="cement_grab"/>
+            <property name="SoundPlace" value="cement_place"/>
+            <property class="Action0">
+                <property name="Create_item" value="resourceCement"/>
+                <property name="Create_item_count" value="10000"/>
+            </property>
+        </item>
+        
+        <item name="resourceConcreteMixBundle">
+            <property name="Extends" value="resourceRockSmallBundle"/>
+            <property name="CustomIcon" value="resourceConcreteMix"/>
+            <property name="SoundPickup" value="cementmix_grab"/>
+            <property name="SoundPlace" value="cementmix_place"/>
+            <property class="Action0">
+                <property name="Create_item" value="resourceConcreteMix"/>
+                <property name="Create_item_count" value="10000"/>
+            </property>
+        </item>
+
+    </append>
+
+    
+    <!-- Add ammo stacks -->
+    <append xpath="//items">
+        
+        <item name="ammoStackMaster">
+            <property name="CreativeMode" value="None"/>
+            <property name="CustomIcon" value="ammo9mmBulletBall"/><property name="ItemTypeIcon" value="bundle"/>
+            <property name="DescriptionKey" value="ammoStackGroupDesc"/>
+            <property name="HoldType" value="45"/>
+            <property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Mmetal"/>
+            <property name="Stacknumber" value="100"/>
+            <property name="Weight" value="0"/>
+            <property name="EconomicValue" value="900"/>
+            <property name="Group" value="Ammo/Weapons,Ammo"/>
+            <property name="UnlockedBy" value="perkPistolPeteComplete"/>
+            <property name="SoundPickup" value="ammobox_grab"/>
+            <property name="SoundPlace" value="ammobox_place"/>
+            <property class="Action0">
+                <property name="Class" value="OpenBundle"/>
+                <property name="Delay" value="0"/>
+                <property name="Sound_start" value="close_garbage"/>
+                <property name="Create_item" value="ammo9mmBulletBall"/>
+                <property name="Create_item_count" value="1000"/>
+            </property>
+        </item>
+
+        <item name="ammoStack9mmBulletBall">
+            <property name="Extends" value="ammoStackMaster"/>
+            <property name="UnlockedBy" value="perkPistolPeteComplete"/>
+            <property name="CustomIcon" value="ammo9mmBulletBall"/>
+            <property name="TraderStageTemplate" value="ammoTier1"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo9mmBulletBall"/>
+            </property>
+        </item>
+
+        <item name="ammoStack9mmBulletHP">
+            <property name="Extends" value="ammoStack9mmBulletBall"/>
+            <property name="CustomIcon" value="ammo9mmBulletHP"/>
+            <property name="TraderStageTemplate" value="ammoTier2"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo9mmBulletHP"/>
+            </property>
+        </item>
+
+        <item name="ammoStack9mmBulletAP">
+            <property name="Extends" value="ammoStack9mmBulletBall"/>
+            <property name="CustomIcon" value="ammo9mmBulletAP"/>
+            <property name="TraderStageTemplate" value="ammoTier3"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo9mmBulletAP"/>
+            </property>
+        </item>
+
+        <item name="ammoStack44MagnumBulletBall">
+            <property name="Extends" value="ammoStackMaster"/>
+            <property name="UnlockedBy" value="perkEnforcerComplete"/>
+            <property name="CustomIcon" value="ammo44MagnumBulletBall"/>
+            <property name="TraderStageTemplate" value="ammoTier1"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo44MagnumBulletBall"/>
+            </property>
+        </item>
+
+        <item name="ammoStack44MagnumBulletHP">
+            <property name="Extends" value="ammoStack44MagnumBulletBall"/>
+            <property name="CustomIcon" value="ammo44MagnumBulletHP"/>
+            <property name="TraderStageTemplate" value="ammoTier2"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo44MagnumBulletHP"/>
+            </property>
+        </item>
+
+        <item name="ammoStack44MagnumBulletAP">
+            <property name="Extends" value="ammoStack44MagnumBulletBall"/>
+            <property name="CustomIcon" value="ammo44MagnumBulletAP"/>
+            <property name="TraderStageTemplate" value="ammoTier3"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo44MagnumBulletAP"/>
+            </property>
+        </item>
+
+        <item name="ammoStack762mmBulletBall">
+            <property name="Extends" value="ammoStackMaster"/>
+            <property name="UnlockedBy" value="perkSniperComplete"/>
+            <property name="CustomIcon" value="ammo762mmBulletBall"/>
+            <property name="TraderStageTemplate" value="ammoTier1"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo762mmBulletBall"/>
+            </property>
+        </item>
+
+        <item name="ammoStack762mmBulletHP">
+            <property name="Extends" value="ammoStack762mmBulletBall"/>
+            <property name="CustomIcon" value="ammo762mmBulletHP"/>
+            <property name="TraderStageTemplate" value="ammoTier2"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo762mmBulletHP"/>
+            </property>
+        </item>
+
+        <item name="ammoStack762mmBulletAP">
+            <property name="Extends" value="ammoStack762mmBulletBall"/>
+            <property name="CustomIcon" value="ammo762mmBulletAP"/>
+            <property name="TraderStageTemplate" value="ammoTier3"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammo762mmBulletAP"/>
+            </property>
+        </item>
+
+        <item name="ammoStackShotgunShell">
+            <property name="Extends" value="ammoStackMaster"/>
+            <property name="UnlockedBy" value="perkShotgunMessiahComplete"/>
+            <property name="CustomIcon" value="ammoShotgunShell"/>
+            <property name="TraderStageTemplate" value="ammoTier1"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoShotgunShell"/>
+            </property>
+        </item>
+
+        <item name="ammoStackShotgunSlug">
+            <property name="Extends" value="ammoStackShotgunShell"/>
+            <property name="CustomIcon" value="ammoShotgunSlug"/>
+            <property name="TraderStageTemplate" value="ammoTier2"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoShotgunSlug"/>
+            </property>
+        </item>
+
+        <item name="ammoStackShotgunBreachingSlug">
+            <property name="Extends" value="ammoStackShotgunShell"/>
+            <property name="CustomIcon" value="ammoShotgunBreachingSlug"/>
+            <property name="TraderStageTemplate" value="ammoTier3"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoShotgunBreachingSlug"/>
+            </property>
+        </item>
+
+        <item name="ammoStackJunkTurretRegular">
+            <property name="Extends" value="ammoStackMaster"/>
+            <property name="UnlockedBy" value="perkTechJunkie8Complete"/>
+            <property name="CustomIcon" value="ammoJunkTurretRegular"/>
+            <property name="TraderStageTemplate" value="ammoTier1"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoJunkTurretRegular"/>
+            </property>
+        </item>
+
+        <item name="ammoStackJunkTurretShell">
+            <property name="Extends" value="ammoStackJunkTurretRegular"/>
+            <property name="CustomIcon" value="ammoJunkTurretShell"/>
+            <property name="TraderStageTemplate" value="ammoTier2"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoJunkTurretShell"/>
+            </property>
+        </item>
+
+        <item name="ammoStackJunkTurretAP">
+            <property name="Extends" value="ammoStackJunkTurretRegular"/>
+            <property name="CustomIcon" value="ammoJunkTurretAP"/>
+            <property name="TraderStageTemplate" value="ammoTier3"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoJunkTurretAP"/>
+            </property>
+        </item>
+
+        <item name="ammoStackArrowStone">
+            <property name="Extends" value="ammoStackMaster"/>
+            <property name="UnlockedBy" value="perkRangersComplete"/>
+            <property name="CustomIcon" value="ammoArrowStone"/>
+            <property name="TraderStageTemplate" value="arrowsTier0"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoArrowStone"/>
+            </property>
+        </item>
+
+        <item name="ammoStackArrowIron">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoArrowIron"/>
+            <property name="TraderStageTemplate" value="arrowsTier1"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoArrowIron"/>
+            </property>
+        </item>
+
+        <item name="ammoStackArrowSteelAP">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoArrowSteelAP"/>
+            <property name="TraderStageTemplate" value="arrowsTier2"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoArrowSteelAP"/>
+            </property>
+        </item>
+
+        <item name="ammoStackArrowFlaming">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoArrowFlaming"/>
+            <property name="TraderStageTemplate" value="arrowsTier3"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoArrowFlaming"/>
+            </property>
+        </item>
+
+        <item name="ammoStackArrowExploding">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoArrowExploding"/>
+            <property name="TraderStageTemplate" value="arrowsTier4"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoArrowExploding"/>
+            </property>
+        </item>
+
+        <item name="ammoStackCrossbowBoltStone">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoCrossbowBoltStone"/>
+            <property name="TraderStageTemplate" value="arrowsTier0"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoCrossbowBoltStone"/>
+            </property>
+        </item>
+
+        <item name="ammoStackCrossbowBoltIron">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoCrossbowBoltIron"/>
+            <property name="TraderStageTemplate" value="arrowsTier1"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoCrossbowBoltIron"/>
+            </property>
+        </item>
+
+        <item name="ammoStackCrossbowBoltSteelAP">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoCrossbowBoltSteelAP"/>
+            <property name="TraderStageTemplate" value="arrowsTier2"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoCrossbowBoltSteelAP"/>
+            </property>
+        </item>
+
+        <item name="ammoStackCrossbowBoltFlaming">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoCrossbowBoltFlaming"/>
+            <property name="TraderStageTemplate" value="arrowsTier3"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoCrossbowBoltFlaming"/>
+            </property>
+        </item>
+
+        <item name="ammoStackCrossbowBoltExploding">
+            <property name="Extends" value="ammoStackArrowStone"/>
+            <property name="CustomIcon" value="ammoCrossbowBoltExploding"/>
+            <property name="TraderStageTemplate" value="arrowsTier4"/>
+            <property class="Action0">
+                <property name="Create_item" value="ammoCrossbowBoltExploding"/>
+            </property>
+        </item>
+
+    </append>
+
+</IronSharkInc>

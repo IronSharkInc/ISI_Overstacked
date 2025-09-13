@@ -1,0 +1,14 @@
+<IronSharkInc>
+
+    <!-- unlock new resource stacks -->
+    <append xpath="//book[@name='perkArtOfMiningPallets']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,resourceClayLumpBundle,resourceCrushedSandBundle,resourceCobblestonesBundle,resourceCementBundle,resourceConcreteMixBundle</append> 
+
+    <!-- unlock ammo stacks after completing the relevant perk book -->
+    <append xpath="//book[@name='perkPistolPeteComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoStack9mmBulletBall,ammoStack9mmBulletHP,ammoStack9mmBulletAP</append>
+    <append xpath="//book[@name='perkEnforcerComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoStack44MagnumBulletBall,ammoStack44MagnumBulletHP,ammoStack44MagnumBulletAP</append>
+    <append xpath="//book[@name='perkSniperComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoStack762mmBulletBall,ammoStack762mmBulletHP,ammoStack762mmBulletAP</append>
+    <append xpath="//book[@name='perkShotgunMessiahComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoStackShotgunShell,ammoStackShotgunSlug,ammoStackShotgunBreachingSlug</append>
+    <append xpath="//book[@name='perkTechJunkie8Complete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoStackJunkTurretRegular,ammoStackJunkTurretShell,ammoStackJunkTurretAP</append>
+    <append xpath="//book[@name='perkRangersComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoStackArrowStone,ammoStackArrowIron,ammoStackArrowSteelAP,ammoStackArrowFlaming,ammoStackArrowExploding,ammoStackCrossbowBoltStone,ammoStackCrossbowBoltIron,ammoStackCrossbowBoltSteelAP,ammoStackCrossbowBoltFlaming,ammoStackCrossbowBoltExploding</append>
+
+</IronSharkInc>
