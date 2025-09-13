@@ -5,7 +5,7 @@
 - Wood, ores, gas, and construction materials stack to 10,000.
 - Added "Stacks of" recipes for clay, sand, cobblestone, cement, and concrete. Unlocks with Art of Mining #5.
 - Added "Stacks of" recipes for ammo. Unlocks after completing the relevant book series.
-Updated localization.
+- Updated localization.
 
 ## Screenshots
 
