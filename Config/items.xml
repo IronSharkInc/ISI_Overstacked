@@ -20,6 +20,14 @@
     <set xpath="//item[starts-with(@name, 'ammo')]      /property[@name='Stacknumber']/@value"> 1000</set>
     <set xpath="//item[@name='ammoGasCan']              /property[@name='Stacknumber']/@value">10000</set>
 
+    <!-- Ammo Crafting -->
+    <set xpath="//item[@name='resourceBuckshot']        /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[@name='resourceBulletCasing']    /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[@name='resourceBulletTip']       /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[@name='resourceGunPowder']       /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[@name='resourcePaper']           /property[@name='Stacknumber']/@value">10000</set>
+    <set xpath="//item[@name='resourceScrapPolymers']   /property[@name='Stacknumber']/@value">10000</set>
+
     <!-- Resources: 1K -->
     <set xpath="//item[@name='resourceSnowBall']        /property[@name='Stacknumber']/@value"> 1000</set>
     <set xpath="//item[@name='resourceYuccaFibers']     /property[@name='Stacknumber']/@value"> 1000</set>
