@@ -2,12 +2,12 @@
 
     <!-- Stacknumbers! -->
 
-    <!-- Round up: 0.1k, 1k, 10k, 100k -->
+    <!-- Round up: 0.1k, 1k, 10k, 50k -->
     <!-- NOTE: leveled items don't stack -->
     <set xpath="//property[@name='Stacknumber' and @value &gt;     0 and @value &lt;    100]/@value">   100</set>
     <set xpath="//property[@name='Stacknumber' and @value &gt;   100 and @value &lt;   1000]/@value">  1000</set>
     <set xpath="//property[@name='Stacknumber' and @value &gt;  1000 and @value &lt;  10000]/@value"> 10000</set>
-    <set xpath="//property[@name='Stacknumber' and @value &gt; 10000 and @value &lt; 100000]/@value">100000</set>
+    <set xpath="//property[@name='Stacknumber' and @value &gt; 10000 and @value &lt; 100000]/@value"> 50000</set>
 
     
     <!-- Overrides! -->

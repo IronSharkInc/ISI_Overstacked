@@ -1,6 +1,7 @@
 # ISI Template
 
 - Rounded stack sizes up to the next multiple of 10. Minimum of 100.
+  - Exception: Dukes are capped at 50k (game limit is 65535, but 50k makes for easier math)
 - Ammo all stacks to 1,000.
 - Ammo crafting ingredients stack to 10,000.
 - Wood, ores, gas, and construction materials stack to 10,000.
