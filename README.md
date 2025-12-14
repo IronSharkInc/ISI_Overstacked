@@ -15,3 +15,11 @@
 ![Added new recipes for construction ammo stacks](images/ammo-stack-1.png)
 ![Added new recipes for construction ammo stacks](images/ammo-stack-2.png)
 ![Updated localization to reflect changes from 6k to 10k](images/updated-localization-6k-to-10k.png)
+
+## Testing
+
+1. Verify ammo stacks to 1,000 in inventory
+2. Check construction materials stack to 10,000
+3. Test "Stacks of" recipes unlock after reading Art of Mining #5
+4. Confirm ammo bundle recipes unlock after completing relevant perk book series (e.g., Pistol Pete)
+5. Verify localization displays correct stack sizes (e.g., "Stack of 9mm Ammo (1000)" for ammo bundles)
